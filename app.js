@@ -30,30 +30,32 @@ function getHumanChoice(){
 //console.log(getHumanChoice());
 
 function playGame(){
-    let humanScore = 0;
+let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice){
-    if(humanChoice === computerChoice){
-        console.log(`It's a draw.`);
-    } else if(humanChoice === "rock" && computerChoice === "paper"){
-        computerScore++;
-        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
-    }else if(humanChoice === "paper" && computerChoice === "scissors"){
-        computerScore++;
-        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
-    } else if(humanChoice === "scissors" && computerChoice === "rock"){
-        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
-    } else{
-        humanScore++;
-        console.log(`You won, ${humanChoice} beats ${computerChoice}`);
-    }
+    function playRound(humanChoice, computerChoice){
+        if(humanChoice === computerChoice){
+            console.log(`It's a draw.`);
+        } else if(humanChoice === "rock" && computerChoice === "paper"){
+            computerScore++;
+            console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+        }else if(humanChoice === "paper" && computerChoice === "scissors"){
+            computerScore++;
+            console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+        } else if(humanChoice === "scissors" && computerChoice === "rock"){
+            console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+        } else{
+            humanScore++;
+            console.log(`You won, ${humanChoice} beats ${computerChoice}`);
+        }
 
-    //console.log(humanChoice);
-    //console.log(computerChoice);
+        console.log(humanChoice);
+        console.log(computerChoice);
+    };
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+    console.log(humanScore);
+    console.log(computerScore);
 };
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-};
-
-playRound(humanChoice, computerChoice);
+playGame();
