@@ -57,7 +57,6 @@ function playGame(){
     playRound(humanChoice, computerChoice);
     console.log(humanScore);
     console.log(computerScore);
-
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
@@ -82,4 +81,9 @@ function playGame(){
     console.log(humanScore);
     console.log(computerScore);
 };
+/*
+for(let i = 0; i < 5; i++){
+    playGame();
+}
+    */
 playGame();
