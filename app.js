@@ -11,21 +11,47 @@ function getComputerChoice(){
         return "error";
     }
 };
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 function getHumanChoice(){
     let humanChoice = prompt("Rock, Paper or Scissors?");
-    if(humanChoice == "rock" || humanChoice == "Rock"){
+    humanChoice = humanChoice.toLowerCase();
+
+    if(humanChoice == humanChoice){
         return "rock";
-    } else if(humanChoice == "paper" || humanChoice == "Paper"){
-        return "paper";
-    } else if(humanChoice == "scissors" || humanChoice == "Scissors"){
-        return "scissors";
+    } else if(humanChoice == "paper"){
+        return humanChoice;
+    } else if(humanChoice == "scissors"){
+        return humanChoice;
     } else{
         return "error";
     }
 };
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice === computerChoice){
+        console.log(`It's a draw.`);
+    } else if(humanChoice === "rock" && computerChoice === "paper"){
+        computerScore++;
+        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+    }else if(humanChoice === "paper" && computerChoice === "scissors"){
+        computerScore++;
+        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+    } else if(humanChoice === "scissors" && computerChoice === "rock"){
+        console.log(`You lost, ${computerChoice} beats ${humanChoice}`);
+    } else{
+        humanScore++;
+        console.log(`You won, ${humanChoice} beats ${computerChoice}`);
+    }
+
+    //console.log(humanChoice);
+    //console.log(computerChoice);
+};
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
