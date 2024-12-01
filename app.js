@@ -21,6 +21,8 @@ function getHumanChoice(){
         return "paper";
     } else if(humanChoice == "scissors" || humanChoice == "Scissors"){
         return "scissors";
+    } else{
+        return "error";
     }
 };
 console.log(getHumanChoice());
