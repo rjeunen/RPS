@@ -1,7 +1,4 @@
 //global vavriables
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice(){
     let computerSelection = Math.floor(Math.random()*3) + 1;
 
@@ -49,36 +46,50 @@ function getHumanChoice(){
  * console.log(getHumanChoice());
  */
 
-function playRound(humanChoice, computerChoice){
-    if(humanChoice == computerChoice){
-        console.log(`It's a draw, you both choose ${humanChoice}!`);
-    }
-    else if(humanChoice == "paper" && computerChoice == "rock" 
-        || humanChoice == "rock" && computerChoice == "scissors" 
-        || humanChoice == "scissors" && computerChoice == "paper"){
-            console.log(`You win, ${humanChoice} beats ${computerChoice}!`);
-            humanScore++;
-    }
-    else if(humanChoice == "paper" && computerChoice == "scissors"
-        || humanChoice == "rock" && computerChoice == "paper"
-        || humanChoice == "scissors" && computerChoice == "rock"){
-            console.log(`You lose, ${computerChoice} beats ${humanChoice}`);
-            computerScore++;
-    }
-    else{
-        console.log(`You did not enter a valid choice!`);
-    }
-}
-
-//variables for the humanChoice and computerChoice
-const humanSelection =  getHumanChoice();
-const computerSelection = getComputerChoice();
-
 //play a round
-playRound(humanSelection, computerSelection);
 
 /**
  * To test scores:
  * console.log(humanScore);
  * console.log(computerScore);
  */
+
+//play game
+function playGame(){
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice){
+        if(humanChoice == computerChoice){
+            console.log(`It's a draw, you both choose ${humanChoice}!`);
+        }
+        else if(humanChoice == "paper" && computerChoice == "rock" 
+            || humanChoice == "rock" && computerChoice == "scissors" 
+            || humanChoice == "scissors" && computerChoice == "paper"){
+                console.log(`You win, ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+        }
+        else if(humanChoice == "paper" && computerChoice == "scissors"
+            || humanChoice == "rock" && computerChoice == "paper"
+            || humanChoice == "scissors" && computerChoice == "rock"){
+                console.log(`You lose, ${computerChoice} beats ${humanChoice}`);
+                computerScore++;
+        }
+        else{
+            console.log(`You did not enter a valid choice!`);
+        }
+    }
+
+    for(i = 0; i < 5; i++){
+        //variables for the humanChoice and computerChoice
+        const humanSelection =  getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        let result = "Player: " + humanScore + "\nComputer: " + computerScore;
+        console.log(result);
+    }
+    
+}
+
+playGame();
