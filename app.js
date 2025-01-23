@@ -16,13 +16,6 @@ function getComputerChoice(){
     }
 }
 
-/**
- * to test function
- * getComputerChoice();
- * console.log(computerSelection);
- * console.log(getComputerChoice());
- */
-
 function getHumanChoice(){
     let playerChoice = prompt("Make a choice: Rock, Paper or Scissors:");
     playerChoice = playerChoice.toLowerCase();
@@ -40,19 +33,6 @@ function getHumanChoice(){
         return "error - something went wrong";
     }
 }
-
-/**
- * To test function:
- * console.log(getHumanChoice());
- */
-
-//play a round
-
-/**
- * To test scores:
- * console.log(humanScore);
- * console.log(computerScore);
- */
 
 //play game
 function playGame(){
