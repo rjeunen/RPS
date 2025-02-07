@@ -4,6 +4,10 @@ const buttonPaper = document.querySelector("#paper");
 const buttonScissors = document.querySelector("#scissors");
 const result = document.querySelector(".result");
 const pResult = document.createElement("p");
+const runningScore = document.querySelector(".runningScore");
+const scoreHuman = document.createElement("p");
+const scoreComputer = document.createElement("p");
+const pWinner = document.createElement("p");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -69,6 +73,11 @@ function playRound(humanChoice, computerChoice){
     if(humanChoice == computerChoice){
         pResult.textContent = `It's a draw, you both choose ${humanChoice}!`;
         result.appendChild(pResult);
+        scoreHuman.textContent =  `Player: ${humanScore}`;
+        scoreComputer.textContent = `Computer: ${computerScore}`;
+        runningScore.appendChild(scoreHuman);
+        runningScore.appendChild(scoreComputer);
+        checkWinner();
     }
     else if(humanChoice == "paper" && computerChoice == "rock" 
         || humanChoice == "rock" && computerChoice == "scissors" 
@@ -76,6 +85,11 @@ function playRound(humanChoice, computerChoice){
             pResult.textContent = `You win, ${humanChoice} beats ${computerChoice}!`;
             result.appendChild(pResult);
             humanScore++;
+            scoreHuman.textContent =  `Player: ${humanScore}`;
+            scoreComputer.textContent = `Computer: ${computerScore}`;
+            runningScore.appendChild(scoreHuman);
+            runningScore.appendChild(scoreComputer);
+            checkWinner();        
     }
     else if(humanChoice == "paper" && computerChoice == "scissors"
         || humanChoice == "rock" && computerChoice == "paper"
@@ -83,9 +97,25 @@ function playRound(humanChoice, computerChoice){
             pResult.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
             result.appendChild(pResult);
             computerScore++;
+            scoreHuman.textContent =  `Player: ${humanScore}`;
+            scoreComputer.textContent = `Computer: ${computerScore}`;
+            runningScore.appendChild(scoreHuman);
+            runningScore.appendChild(scoreComputer);
+            checkWinner();
     }
     else{
         console.log(`You did not enter a valid choice!`);
+    }
+}
+
+function checkWinner(){
+    if(humanScore === 5){
+        pWinner.textContent = `Congrats! You won ${humanScore} VS ${computerScore}`;
+        result.appendChild(pWinner);
+    }
+    if(computerScore === 5){
+        pWinner.textContent = `Oops, you lost! ${computerScore} VS ${humanScore}`;
+        result.appendChild(pWinner);
     }
 }
 
