@@ -8,14 +8,23 @@ let computerScore = 0;
 
 buttonRock.addEventListener("click", () => {
     console.log("testing rock button");
+    const humanSelection = "rock";
+    const computerselection = getComputerChoice();
+    playRound(humanSelection, computerselection);
 });
 
 buttonPaper.addEventListener("click", () => {
     console.log("testing paper button");
+    const humanSelection = "paper";
+    const computerselection = getComputerChoice();
+    playRound(humanSelection, computerselection);
 });
 
 buttonScissors.addEventListener("click", () => {
     console.log("testing scissors button");
+    const humanSelection = "scissors";
+    const computerselection = getComputerChoice();
+    playRound(humanSelection, computerselection);
 });
 
 function getComputerChoice(){
