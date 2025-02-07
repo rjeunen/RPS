@@ -13,21 +13,18 @@ let humanScore = 0;
 let computerScore = 0;
 
 buttonRock.addEventListener("click", () => {
-    console.log("testing rock button");
     const humanSelection = "rock";
     const computerselection = getComputerChoice();
     playRound(humanSelection, computerselection);
 });
 
 buttonPaper.addEventListener("click", () => {
-    console.log("testing paper button");
     const humanSelection = "paper";
     const computerselection = getComputerChoice();
     playRound(humanSelection, computerselection);
 });
 
 buttonScissors.addEventListener("click", () => {
-    console.log("testing scissors button");
     const humanSelection = "scissors";
     const computerselection = getComputerChoice();
     playRound(humanSelection, computerselection);
@@ -118,22 +115,3 @@ function checkWinner(){
         result.appendChild(pWinner);
     }
 }
-
-//Remove playGame because this plays exactly 5 rounds.
-/*
-//play game
-function playGame(){
-
-    for(i = 0; i < 5; i++){
-        //variables for the humanChoice and computerChoice
-        const humanSelection =  getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        let result = "Player: " + humanScore + "\nComputer: " + computerScore;
-        console.log(result);
-    }
-    
-}
-    */
-
-//playGame();
