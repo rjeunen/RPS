@@ -2,6 +2,7 @@
 const buttonRock = document.querySelector("#rock");
 const buttonPaper = document.querySelector("#paper");
 const buttonScissors = document.querySelector("#scissors");
+const result = document.querySelector(".result");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -65,18 +66,24 @@ function getHumanChoice(){
 //1 round function
 function playRound(humanChoice, computerChoice){
     if(humanChoice == computerChoice){
-        console.log(`It's a draw, you both choose ${humanChoice}!`);
+        let pResult = document.createElement("p");
+        pResult.textContent = `It's a draw, you both choose ${humanChoice}!`;
+        result.appendChild(pResult);
     }
     else if(humanChoice == "paper" && computerChoice == "rock" 
         || humanChoice == "rock" && computerChoice == "scissors" 
         || humanChoice == "scissors" && computerChoice == "paper"){
-            console.log(`You win, ${humanChoice} beats ${computerChoice}!`);
+            let pResult = document.createElement("p");
+            pResult.textContent = `You win, ${humanChoice} beats ${computerChoice}!`;
+            result.appendChild(pResult);
             humanScore++;
     }
     else if(humanChoice == "paper" && computerChoice == "scissors"
         || humanChoice == "rock" && computerChoice == "paper"
         || humanChoice == "scissors" && computerChoice == "rock"){
-            console.log(`You lose, ${computerChoice} beats ${humanChoice}`);
+            let pResult = document.createElement("p");
+            pResult.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
+            result.appendChild(pResult);
             computerScore++;
     }
     else{
