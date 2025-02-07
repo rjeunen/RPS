@@ -59,6 +59,8 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+//Remove playGame because this plays exactly 5 rounds.
+/*
 //play game
 function playGame(){
 
@@ -72,5 +74,6 @@ function playGame(){
     }
     
 }
+    */
 
 playGame();
