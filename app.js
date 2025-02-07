@@ -3,6 +3,7 @@ const buttonRock = document.querySelector("#rock");
 const buttonPaper = document.querySelector("#paper");
 const buttonScissors = document.querySelector("#scissors");
 const result = document.querySelector(".result");
+const pResult = document.createElement("p");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -66,14 +67,12 @@ function getHumanChoice(){
 //1 round function
 function playRound(humanChoice, computerChoice){
     if(humanChoice == computerChoice){
-        let pResult = document.createElement("p");
         pResult.textContent = `It's a draw, you both choose ${humanChoice}!`;
         result.appendChild(pResult);
     }
     else if(humanChoice == "paper" && computerChoice == "rock" 
         || humanChoice == "rock" && computerChoice == "scissors" 
         || humanChoice == "scissors" && computerChoice == "paper"){
-            let pResult = document.createElement("p");
             pResult.textContent = `You win, ${humanChoice} beats ${computerChoice}!`;
             result.appendChild(pResult);
             humanScore++;
@@ -81,7 +80,6 @@ function playRound(humanChoice, computerChoice){
     else if(humanChoice == "paper" && computerChoice == "scissors"
         || humanChoice == "rock" && computerChoice == "paper"
         || humanChoice == "scissors" && computerChoice == "rock"){
-            let pResult = document.createElement("p");
             pResult.textContent = `You lose, ${computerChoice} beats ${humanChoice}`;
             result.appendChild(pResult);
             computerScore++;
@@ -108,4 +106,4 @@ function playGame(){
 }
     */
 
-playGame();
+//playGame();
