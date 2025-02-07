@@ -1,6 +1,22 @@
 //global vavriables
+const buttonRock = document.querySelector("#rock");
+const buttonPaper = document.querySelector("#paper");
+const buttonScissors = document.querySelector("#scissors");
+
 let humanScore = 0;
 let computerScore = 0;
+
+buttonRock.addEventListener("click", () => {
+    console.log("testing rock button");
+});
+
+buttonPaper.addEventListener("click", () => {
+    console.log("testing paper button");
+});
+
+buttonScissors.addEventListener("click", () => {
+    console.log("testing scissors button");
+});
 
 function getComputerChoice(){
     let computerSelection = Math.floor(Math.random()*3) + 1;
